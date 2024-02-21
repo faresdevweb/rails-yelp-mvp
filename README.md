@@ -1,24 +1,10 @@
-# README
+## README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+YELP MVP with ROR
 
-Things you may want to cover:
+# Features : 
 
-* Ruby version
+-Add restaurants
+-See restaurant details
+-Create a review for a restaurants
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
