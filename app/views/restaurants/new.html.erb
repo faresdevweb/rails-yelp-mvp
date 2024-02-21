@@ -1,4 +1,4 @@
-<div class="d-flex justify-content-center align-items-center gap-4 mb-5">
+<div class="d-flex justify-content-center align-items-center gap-4 mb-5 ">
     <%= link_to 'Back home', restaurants_path, class: "btn btn-secondary" %>
     <h1 class="text-center">New restaurant</h1>
 </div>
@@ -7,12 +7,12 @@
     <%= simple_form_for @restaurant do |f| %>
         <%= f.input :name %>
         <%= f.input :address %>
-        <%= f.input :category, collection: ["chinese", "italian", "japanese", "french", "belgian"] %>
+        <%= f.input :category, collection: Restaurant::VALID_CATEGORIES %>
         <%= f.input :phone_number %>
         <%= f.button :submit, class: "btn btn-primary" %>
         <% if @restaurant.errors.any? %>
             <div id="error_explanation">
-                <h2><%= pluralize(@restaurant.errors.count, "Errors details: ") %></h2>
+                <h2><%= pluralize(@restaurant.errors.count, "Error: ") %></h2>
                 <ul>
                     <% @restaurant.errors.full_messages.each do |message| %>
                         <li><%= message %></li>

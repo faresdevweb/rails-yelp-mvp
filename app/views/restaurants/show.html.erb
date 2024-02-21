@@ -1,0 +1,17 @@
+<div class="d-flex justify-content-center align-items-center gap-4 mb-5">
+    <%= link_to 'Back home', restaurants_path, class: "btn btn-secondary" %>
+    <h1 class="text-center">Restaurant details:</h1>
+
+</div>
+
+<div class="list-group-item container w-50">
+    <h3 class="panel-title"><%= @restaurant.name %></h3>
+    <p><%= @restaurant.address %></p>
+    <p><%= @restaurant.phone_number %></p>
+    <p><%= @restaurant.category %></p>
+    <%=
+        link_to 'Review restaurant',
+        # review_path(@restaurant),
+        class: "btn btn-secondary"
+    %>
+</div>
