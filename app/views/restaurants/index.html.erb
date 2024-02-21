@@ -1,0 +1,21 @@
+<div>
+    <h1 class="text-center">Restaurants list:</h1>
+</div>
+
+<% @restaurants.each do |restaurant| %>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title"><%= restaurant.name %></h3>
+        </div>
+        <div class="panel-body">
+            <p><%= restaurant.name %></p>
+            <p><%= restaurant.address %></p>
+            <p><%= restaurant.phone_number %></p>
+            <p><%= restaurant.category %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
