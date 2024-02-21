@@ -1,4 +1,5 @@
-<div>
+<div class="d-flex justify-content-center align-items-center gap-4 mb-5">
+    <%= link_to 'Back home', restaurants_path, class: "btn btn-secondary" %>
     <h1 class="text-center">New restaurant</h1>
 </div>
 
@@ -9,5 +10,15 @@
         <%= f.input :category, collection: ["chinese", "italian", "japanese", "french", "belgian"] %>
         <%= f.input :phone_number %>
         <%= f.button :submit, class: "btn btn-primary" %>
+        <% if @restaurant.errors.any? %>
+            <div id="error_explanation">
+                <h2><%= pluralize(@restaurant.errors.count, "Errors details: ") %></h2>
+                <ul>
+                    <% @restaurant.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                    <% end %>
+                </ul>
+            </div>
+        <% end %>
     <% end %>
 </div>
