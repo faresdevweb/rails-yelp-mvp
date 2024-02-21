@@ -9,9 +9,20 @@
     <p><%= @restaurant.address %></p>
     <p><%= @restaurant.phone_number %></p>
     <p><%= @restaurant.category %></p>
+    <div class="w-20">
+       <div class="container">
+            <h2 class="fs-5">Reviews</h2>
+            <% @restaurant.reviews.each do |review| %>
+              <div class="border border-2 p-3 mt-2 rounded">
+                <p><%= review.content %></p>
+                <p>Rating: <%= review.rating %>/5</p>
+              </div>
+            <% end %>
+        </div>
+    </div>
     <%=
         link_to 'Review restaurant',
-        # review_path(@restaurant),
-        class: "btn btn-secondary"
+        new_restaurant_review_path(@restaurant),
+        class: "btn btn-secondary mt-3"
     %>
 </div>
