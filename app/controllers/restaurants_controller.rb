@@ -1,11 +1,12 @@
-class RestaurantsController < ApplicationController
+# frozen_string_literal: true
+class RestaurantsController < ApplicationController # rubocop:disable Layout/EmptyLineAfterMagicComment,Style/Documentation
   def index
     @restaurants = Restaurant.all
   end
 
   def show
     @restaurant = Restaurant.find(params[:id])
-    @review = Review.new
+    @review = @restaurant.reviews
   end
 
   def new
